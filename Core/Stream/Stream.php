@@ -13,7 +13,7 @@ abstract class Stream implements StreamInterface
 	private $stream;
 	private $direction;
 
-	public function __construct($direction = self::STREAM_DIR_WRITE)
+	public function __construct($direction = self::STREAM_DIR_BOTH)
 	{
 		$this->openStream($direction);
 	}

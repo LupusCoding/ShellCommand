@@ -5,16 +5,15 @@ namespace Core\Stream;
 use \Core\Stream\StreamInterface;
 use \Core\Stream\Stream;
 
-class ConsoleStream extends Stream implements StreamInterface
+class ErrorStream extends Stream implements StreamInterface
 {
 	private $stream;
 	private $direction;
 
-	public function openStream($direction = self::STREAM_DIR_BOTH)
+	public function openStream($direction = self::STREAM_DIR_READ)
 	{
 		$this->direction = $direction;
-		$this->stream = @fopen('php://stdout', $direction) ?: fopen('php://output', $direction);
-		if(false === ($this->stream)) {
+		if(false === ($this->stream = @fopen('php://stderr', $direction))) {
 			throw new \RuntimeException('Unable to open stream');
 		}
 
