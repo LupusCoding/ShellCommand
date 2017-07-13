@@ -9,10 +9,10 @@ $ConsoleOutput = new \Core\Output\ConsoleOutput();
 
 $header = <<<HEADER
 +----------------------------------------------+
-| Shell Core                            v0.1.0 |
+| ShellCommand                          v0.1.0 |
 +----------------------------------------------+
 | Author:  LupusCoding <LupusCoding@gmail.com> |
-| License: CC BY-NC 4.0                        |
+| License: MIT @ 2017                          |
 +----------------------------------------------+
 
 HEADER;
