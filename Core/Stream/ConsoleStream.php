@@ -18,7 +18,9 @@ class ConsoleStream extends Stream implements StreamInterface
 		return $this;
 	}
 
-	public function readStream() {} // @Todo: how to do this???
+	public function readStream() {
+		return stream_get_contents($this->stream);
+	}
 
 	public function writeStream($message)
 	{
